@@ -1,6 +1,9 @@
 
 bonemeal = {}
 
+-- Load support for intllib.
+local MP = minetest.get_modpath(minetest.get_current_modname())
+local S, NS = dofile(MP.."/intllib.lua")
 
 -- default crops
 local crops = {
@@ -325,7 +328,7 @@ end
 
 -- mulch (strength 1)
 minetest.register_craftitem("bonemeal:mulch", {
-	description = "Mulch",
+	description = S("Mulch"),
 	inventory_image = "bonemeal_mulch.png",
 
 	on_use = function(itemstack, user, pointed_thing)
@@ -354,7 +357,7 @@ minetest.register_craftitem("bonemeal:mulch", {
 
 -- bonemeal (strength 2)
 minetest.register_craftitem("bonemeal:bonemeal", {
-	description = "Bone Meal",
+	description = S("Bone Meal"),
 	inventory_image = "bonemeal_item.png",
 
 	on_use = function(itemstack, user, pointed_thing)
@@ -384,7 +387,7 @@ minetest.register_craftitem("bonemeal:bonemeal", {
 
 -- fertiliser (strength 3)
 minetest.register_craftitem("bonemeal:fertiliser", {
-	description = "Fertiliser",
+	description = S("Fertiliser"),
 	inventory_image = "bonemeal_fertiliser.png",
 
 	on_use = function(itemstack, user, pointed_thing)
@@ -414,7 +417,7 @@ minetest.register_craftitem("bonemeal:fertiliser", {
 
 -- bone
 minetest.register_craftitem("bonemeal:bone", {
-	description = "Bone",
+	description = S("Bone"),
 	inventory_image = "bonemeal_bone.png",
 })
 

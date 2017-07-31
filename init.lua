@@ -3,7 +3,7 @@ bonemeal = {}
 
 -- Load support for intllib.
 local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S, NS = dofile(MP .. "/intllib.lua")
 
 -- default crops
 local crops = {
@@ -32,6 +32,8 @@ local saplings = {
 	{"default:acacia_sapling", default.grow_new_acacia_tree, "soil"},
 	{"default:aspen_sapling", default.grow_new_aspen_tree, "soil"},
 	{"default:pine_sapling", pine_grow, "soil"},
+	{"default:bush_sapling", default.grow_bush, "soil"},
+	{"default:acacia_bush_sapling", default.grow_acacia_bush, "soil"},
 }
 
 -- helper tables ( "" denotes a blank item )
@@ -476,6 +478,8 @@ minetest.override_item("default:dirt", {
 
 
 -- add support for other mods
-dofile(minetest.get_modpath("bonemeal") .. "/mods.lua")
+local path = minetest.get_modpath("bonemeal")
+dofile(path .. "/mods.lua")
+dofile(path .. "/lucky_block.lua")
 
-print ("[MOD] Bonemeal loaded")
+print (S("[bonemeal] loaded"))
